@@ -3,9 +3,7 @@ const router = Router();
 const { isValidGetParams, isValidPostBody } =  require('./validations.js');
 const { getSpells, setSpells } =  require('../service/spells.js');
 
-basePath = '/harrypotter/spells'
-
-router.get(basePath+'/', async (req, res) => {    
+router.get('/', async (req, res) => {    
     try {
         const queryParam = req.query
         
@@ -25,7 +23,7 @@ router.get(basePath+'/', async (req, res) => {
     }
 })
 
-router.post(basePath+'/', async (req, res) => {    
+router.post('/', async (req, res) => {    
     try {
         const validBodyResponse = isValidPostBody(req.body)
         if(validBodyResponse.status == 'error'){

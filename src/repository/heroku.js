@@ -22,7 +22,7 @@ async function getSpells(type) {
       console.error(e);
       return {
         status: 'error',
-        message: e.error
+        message: e.message
       }
     }
 };

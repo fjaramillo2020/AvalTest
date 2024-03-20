@@ -4,11 +4,13 @@ var express = require('express')
 var api = express()
 
 api.use(express.json())
-api.use(routes);
+api.use('/harrypotter/spells', routes);
 
-api.post('/users', function(req, res) {
+api.post('/health', function(req, res) {
   res.sendStatus(200)
-  res.json({ mensaje: 'metodo post' })   
+  res.json({
+    status: 'OK'
+  })   
 })
 
 api.listen(config.PORT, config.HOST, () => {
